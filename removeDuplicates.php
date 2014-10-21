@@ -1,14 +1,13 @@
 <?php
 function removeDuplicates($firstArray, $secondArray, $byTheKey)
 {
-    $temporaryArray = array_merge($firstArray, $secondArray);
-    foreach ($temporaryArray as $k => $v) {
-        foreach ($temporaryArray as $key => $value) {
-            if ($k != $key && $v[$byTheKey] == $value[$byTheKey]) {
-                unset($temporaryArray[$k]);
-            }
-        }
-    }
-    return $temporaryArray;
+	$collect = array();
+	$walker = function ($v, $k) use (& $collect, $byTheKey) {
+		$collect[$v[$byTheKey]] = $v;
+	};
+	$tmp = array_merge($firstArray, $secondArray);
+	array_walk($tmp, $walker);
+
+	return $collect;
 }
 ?>
