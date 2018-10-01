@@ -1,6 +1,6 @@
-#Remove duplicates and merge arrays by second level key.
+# Remove duplicates and merge arrays by second level key.
 
-###Example:
+### Example:
 
 `removeDuplicates($firstArray, $secondArray, 'idproducts')`
 
@@ -47,7 +47,7 @@ $secondArray
 )
 ```
 
-###Returns
+### Returns
 
 ```
 Array
